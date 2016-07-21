@@ -25,7 +25,15 @@
         <td><%= pokemon[i].trainer_id %></td>
         <td><%= pokemon[i].cp %></td>
         <td><%= pokemon[i].in_gym %></td>
-        <td>Assign to gym</td>
+        <% if (pokemon[i].in_gym) { %>
+          <td><a href="/pokemon/<%= pokemon[i].id %>/remove-gym">Remove from gym</a></td>
+        <% } else {
+          if (!gymFull) { %>
+            <td><a href="/pokemon/<%= pokemon[i].id %>/assign-gym">Assign to gym</a></td>
+          <% } else {%>
+            <td></td>
+          <% }
+        } %>
         <td>
           <a href="/pokemon/<%= pokemon[i].id %>/edit">edit</a>
         </td>

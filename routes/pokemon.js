@@ -5,8 +5,8 @@ var knex = require('../db/knex');
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   knex.raw(`SELECT * from pokemon`).then(function(pokemon) {
-    // console.log(pokemon.rows);
-    res.render('pokemon/index', {pokemon: pokemon.rows});
+    var gymFull = (req.cookies.p1 && req.cookies.p2) ? true : false;
+    res.render('pokemon/index', {pokemon: pokemon.rows, gymFull: gymFull});
   })
 });
 
@@ -41,6 +41,20 @@ router.post('/:id', function(req, res, next) {
   knex.raw(`UPDATE pokemon SET name='${req.body.name}', trainer_id=${req.body.trainer_id}, cp=${req.body.cp}
   WHERE id=${req.params.id}`).then(function() {
     res.redirect('/pokemon/'+req.params.id);
+  })
+})
+
+router.get('/:id/assign-gym', function(req, res, next) {
+  knex.raw(`UPDATE pokemon SET in_gym='t' WHERE id=${req.params.id}`).then(function() {
+    (req.cookies.p1) ? res.cookie('p2', req.params.id) : res.cookie('p1', req.params.id);
+    res.redirect('/');
+  })
+})
+
+router.get('/:id/remove-gym', function(req, res, next) {
+  knex.raw(`UPDATE pokemon SET in_gym='f' WHERE id=${req.params.id}`).then(function() {
+    (req.cookies.p1 === req.params.id) ? res.clearCookie('p1') : res.clearCookie('p2');
+    res.redirect('/');
   })
 })
 
