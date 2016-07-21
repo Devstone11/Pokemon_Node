@@ -2,5 +2,9 @@
 
 <span style="color:white">Gym home page.</span>
 
-<h2>Pokemon 1: <%= pokemon1.name %></h2>
-<h2>Pokemon 2: <%= pokemon2.name %></h2>
+<% if (pokemon1.id === pokemon2.id) { %>
+  <h1 class="error">A Pokémon cannot fight itself! Please choose a different Pokémon!</h1>
+<% } else { %>
+  <h2>Pokemon 1: <%= pokemon1.name %></h2>
+  <h2>Pokemon 2: <%= pokemon2.name %></h2>
+<% } %>
