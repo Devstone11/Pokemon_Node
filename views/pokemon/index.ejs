@@ -4,6 +4,33 @@
 
 <span style="color:white">Pokemón home page.</span>
 
+<table>
+  <thead>
+    <th>id</th>
+    <th>name</th>
+    <th>trainer_id</th>
+    <th>cp</th>
+    <th>in_gym</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    <% for (var i = 0; i < pokemon.length; i++) { %>
+      <tr>
+        <td><%= pokemon[i].id %></td>
+        <td><%= pokemon[i].name %></td>
+        <td><%= pokemon[i].trainer_id %></td>
+        <td><%= pokemon[i].cp %></td>
+        <td><%= pokemon[i].in_gym %></td>
+        <td>Assign to gym</td>
+        <td>edit</td>
+        <td>delete</td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
+
 <form action="/pokemon/new" method="GET">
     <input type="submit" value="+ Add New Pokemon">
 </form>

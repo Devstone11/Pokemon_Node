@@ -4,7 +4,9 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: process.env.DATABASE_URL
+    connection: 'postgres://localhost/pokemon_node'
+    // connection: process.env.DATABASE_URL
+    // cut from .env file: DATABASE_URL=postgres://localhost/pokemon_node
   },
 
   production: {
