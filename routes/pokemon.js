@@ -29,4 +29,12 @@ router.get('/:id', function(req, res, next) {
   })
 })
 
+router.get('/:id/edit', function(req, res, next) {
+  knex.raw(`SELECT * from pokemon WHERE id=${req.params.id}`).then(function(pokemon) {
+    knex.raw(`SELECT * from trainers`).then(function(trainers) {
+      res.render('pokemon/edit', {pokemon: pokemon.rows[0], trainers: trainers.rows})
+    })
+  })
+})
+
 module.exports = router;
