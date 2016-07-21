@@ -4,6 +4,14 @@
 
 <span style="color:white">Trainers home page.</span>
 
+<ul>
+  <% for (var i = 0; i < trainers.length; i++) { %>
+    <li>
+      <a href="/trainers/<%= trainers[i].id %>"><%= trainers[i].name %></a>
+    </li>
+  <% } %>
+</ul>
+
 <button type="button" name="button" id="add_new">+ Add New Trainer</button>
 
 <script type="text/javascript">

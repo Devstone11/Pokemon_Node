@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var Trainers = require('../lib/queries');
 
-/* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('trainers/index', {passedInData: "xyz"});
+  Trainers.all('trainers').then(function(trainers) {
+    res.render('trainers/index', {trainers: trainers.rows, passedInData: 12});
+  })
 });
 
 module.exports = router;
