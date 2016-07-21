@@ -37,4 +37,11 @@ router.get('/:id/edit', function(req, res, next) {
   })
 })
 
+router.post('/:id', function(req, res, next) {
+  knex.raw(`UPDATE pokemon SET name='${req.body.name}', trainer_id=${req.body.trainer_id}, cp=${req.body.cp}
+  WHERE id=${req.params.id}`).then(function() {
+    res.redirect('/pokemon/'+req.params.id);
+  })
+})
+
 module.exports = router;
