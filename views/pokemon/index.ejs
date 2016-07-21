@@ -4,15 +4,6 @@
 
 <span style="color:white">Pokemón home page.</span>
 
-
-
-<button type="button" name="button" id="add_new">+ Add New Pokemon</button>
-
-<script type="text/javascript">
-   var btn = document.getElementById("add_new");
-   var passedInData = '<%= passedInData %>' ;
-   btn.addEventListener("click", function(){
-     alert("the button works, and we see "+passedInData);
-   })
-
-</script>
+<form action="/pokemon/new" method="GET">
+    <input type="submit" value="+ Add New Pokemon">
+</form>

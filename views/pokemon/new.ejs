@@ -1,0 +1,10 @@
+<%- contentFor('body') %>
+
+<span style="color:white">Pokemón new page.</span>
+
+<form action="/pokemon" method="post">
+    <input type="text" name="name" placeholder="Pokemon Name">
+    <input type="text" name="trainer_id" placeholder="Pokemon Trainer Id">
+    <input type="number" name="cp" placeholder="Combat Power">
+    <input type="submit" value="+ Add This Pokemon">
+</form>
