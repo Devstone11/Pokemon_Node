@@ -34,9 +34,14 @@ router.get('/gym/edit', function(req, res, next) {
 
 router.post('/gym', function(req, res, next) {
   console.log(req.body);
-  res.cookie('p1', req.body.pokemon1 || req.cookies.p1 || req.cookies.p2);
-  res.cookie('p2', req.body.pokemon2);
-  res.redirect('/gym');
+  var pokemon1 = req.body.pokemon1 || req.cookies.pq || req.cookies.p2;
+  Pokemon.setGym('t', pokemon1).then(function() {
+    Pokemon.setGym('t', req.body.pokemon2).then(function() {
+      res.cookie('p1', req.body.pokemon1 || req.cookies.p1 || req.cookies.p2);
+      res.cookie('p2', req.body.pokemon2);
+      res.redirect('/gym');
+    })
+  })
 })
 
 module.exports = router;
