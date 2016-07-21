@@ -8,4 +8,12 @@ router.get('/', function(req, res, next) {
   })
 });
 
+router.get('/:id', function(req, res, next) {
+  Trainers.find('trainers', req.params.id).then(function(trainer) {
+    Trainers.findMany('pokemon', 'trainer_id', req.params.id).then(function(pokemon) {
+      res.render('trainers/show', {trainer: trainer.rows[0], pokemon: pokemon.rows})
+    })
+  })
+})
+
 module.exports = router;

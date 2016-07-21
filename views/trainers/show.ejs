@@ -1,0 +1,21 @@
+<%- contentFor('body') %>
+
+<span style="color:white">Trainers home page.</span>
+
+<h1><%= trainer.name %></h1>
+<h3>Trainer ID: <%= trainer.id %></h3>
+<h2>Pokemon:</h2>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>CP</th>
+  </thead>
+  <tbody>
+    <% for (var i = 0; i < pokemon.length; i++) { %>
+      <tr>
+        <td><%= pokemon[i].name %></td>
+        <td><%= pokemon[i].cp %></td>
+      </tr>
+    <% } %>
+  </tbody>
+</table>
