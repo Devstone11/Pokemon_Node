@@ -2,16 +2,5 @@
 
 <span style="color:white">Gym home page.</span>
 
-<h3>Pokemon 1:</h3>
-<select name="pokemon1">
-  <% for (var i = 0; i < pokemon.length; i++) { %>
-    <option value="<%= pokemon[i].id %>"><%= pokemon[i].name %></option>
-  <% } %>
-</select>
-
-<h3>Pokemon 2:</h3>
-<select name="pokemon2">
-  <% for (var i = 0; i < pokemon.length; i++) { %>
-    <option value="<%= pokemon[i].id %>"><%= pokemon[i].name %></option>
-  <% } %>
-</select>
+<h2>Pokemon 1: <%= pokemon1.name %></h2>
+<h2>Pokemon 2: <%= pokemon2.name %></h2>
