@@ -19,13 +19,15 @@
     <% for (var i = 0; i < pokemon.length; i++) { %>
       <tr>
         <td><%= pokemon[i].id %></td>
-        <td><%= pokemon[i].name %></td>
+        <td>
+          <a href="/pokemon/<%= pokemon[i].id %>"><%= pokemon[i].name %></a>
+        </td>
         <td><%= pokemon[i].trainer_id %></td>
         <td><%= pokemon[i].cp %></td>
         <td><%= pokemon[i].in_gym %></td>
         <td>Assign to gym</td>
         <td>
-          <a href="/pokemon/<%= pokemon[i].id %>">edit</a>
+          <a href="/pokemon/<%= pokemon[i].id %>/edit">edit</a>
         </td>
         <td>
           <a href="/pokemon/<%= pokemon[i].id %>/delete">delete</a>
