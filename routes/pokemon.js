@@ -44,4 +44,10 @@ router.post('/:id', function(req, res, next) {
   })
 })
 
+router.get('/:id/delete', function(req, res, next) {
+  knex.raw(`DELETE from pokemon WHERE id=${req.params.id}`).then(function() {
+    res.redirect('/');
+  })
+})
+
 module.exports = router;
