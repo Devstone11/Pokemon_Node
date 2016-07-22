@@ -9,7 +9,11 @@ router.get('/', function(req, res, next) {
 
 router.get('/gym', function(req, res, next) {
   if (req.cookies.p1 && req.cookies.p2) {
-    res.render('gym/index', {pokemon1: req.cookies.p1, pokemon2: req.cookies.p2})
+    Pokemon.find('pokemon', req.cookies.p1).then(function(pokemon1) {
+      Pokemon.find('pokemon', req.cookies.p2).then(function(pokemon2) {
+        res.render('gym/index', {pokemon1: pokemon1.rows[0], pokemon2: pokemon2.rows[0]});
+      })
+    })
   } else {
     res.redirect('/gym/edit');
   }
@@ -30,23 +34,24 @@ router.get('/gym/edit', function(req, res, next) {
 
 router.post('/gym', function(req, res, next) {
   console.log(req.body);
-  var pokemon1;
   if (req.body.pokemon1) {
-    pokemon1 = req.body.pokemon1;
+    Pokemon.setGym('t', req.body.pokemon1).then(function() {
+      Pokemon.setGym('t', req.body.pokemon2).then(function() {
+        res.cookie('p1', req.body.pokemon1);
+        res.cookie('p2', req.body.pokemon2);
+        res.redirect('/gym');
+      });
+    });
   } else {
-    
-  }
-
-
-
-  var pokemon1 = req.body.pokemon1 || req.cookies.p1 || req.cookies.p2;
-  Pokemon.setGym('t', pokemon1).then(function() {
     Pokemon.setGym('t', req.body.pokemon2).then(function() {
-      res.cookie('p1', req.body.pokemon1 || req.cookies.p1 || req.cookies.p2);
-      res.cookie('p2', req.body.pokemon2);
-      res.redirect('/gym');
-    })
-  })
+      if (req.cookies.p1) {
+        res.cookie('p2', req.body.pokemon2);
+      } else {
+        res.cookie('p1', req.body.pokemon2);
+      };
+      res.redirect('/gym')
+    });
+  }
 })
 
 module.exports = router;
