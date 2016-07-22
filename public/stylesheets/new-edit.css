@@ -1,0 +1,46 @@
+.pokemon-wear-section {
+  position: relative;
+  /*background: url('/images/pokeball-bubbles.jpg') center top no-repeat;*/
+  background: url('/images/pokeball-bubbles.jpg');
+  background-repeat: no-repeat;
+  background-position: 0vw 40%;
+  background-size: cover;
+  width: 100%;
+}
+
+.info {
+  position: absolute;
+  height: 26vw;
+  width: 26vw;
+  top: 3vw;
+  left: 5vw;
+  padding: 2vw;
+}
+
+.display-bckgnd {
+  background-color: black;
+  opacity: 0.65;
+}
+
+.show h1,h2,h3 {
+  margin: 0px;
+  font-family: pokemon GB;
+  color: #3560A5;
+}
+
+.show h1 {
+  font-size: 3vw;
+  color: #962022;
+}
+
+.show h2 {
+  font-size: 1.5vw;
+  margin-top: 2vw;
+}
+
+.show h3 {
+  font-size: 1.5vw;
+  text-align: right;
+  margin-top: -1.5vw;
+  height: 25px;
+}

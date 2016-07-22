@@ -1,10 +1,14 @@
 <%- contentFor('body') %>
 
-<span style="color:white">Pokemón new page.</span>
+<div class="display-bckgnd info"></div>
+<div class="show info">
+  <h1><%= pokemon.name%></h1>
+  <h2>Id:</h2>
+  <h3><%= pokemon.id%></h3>
+  <h2>Trainer:</h2>
+  <h3><%= trainer.name%></h3>
+  <h2>CP:</h2>
+  <h3><%= pokemon.cp%></h3>
+</div>
 
-<form action="/pokemon" method="post">
-    <h1><%= pokemon.name%></h1>
-    <h2>Id: <%= pokemon.id%></h2>
-    <h2>Trainer: <%= trainer.name%></h2>
-    <h2>CP: <%= pokemon.cp%></h2>
-</form>
+<link rel='stylesheet' href='/stylesheets/new-edit.css' />

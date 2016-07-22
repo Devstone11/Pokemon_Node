@@ -314,7 +314,6 @@ a img{
   position: relative;
   background: url('/images/pokeball-box.jpg') center top no-repeat;
   background-size: cover;
-  /*height: 800px;*/
   height: 75vh;
 }
 
