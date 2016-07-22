@@ -93,7 +93,8 @@ a img{
   .pokemon-header .mdl-navigation__link {
     color: #95999E;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 12px;
+    font-family: pokemon GB;
   }
 
   .pokemon-navigation-container {
@@ -131,7 +132,7 @@ a img{
   }
 
     .pokemon-navigation .mdl-navigation__link:hover {
-      border-bottom: 4px solid #E3B845;
+      border-bottom: 4px solid #3560A5;
     }
 
   .pokemon-search-box {

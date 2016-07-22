@@ -18,21 +18,33 @@
 }
 
 table {
-  color: #962022;
+  color: #3560A5;
   font-family: pokemon GB;
   font-size: 1.05vw;
   border-collapse: collapse;
 }
 
 th {
-  color: #E9B756;
+  color: #962022;
+
+}
+
+.pokemon-home {
+  position: absolute;
+  right: 3vw;
+}
+
+.h2-bckgnd {
+  top: 2vh;
+  width: 29vw;
+  height: 10vh;
+  background-color: black;
+  opacity: .85
 }
 
 h2 {
   color: #962022;
   margin: 0px;
-  position: absolute;
-  right: 3vw;
   top: 4vh;
   font-family: pokemon GB;
   font-size: 4vw;
@@ -44,7 +56,28 @@ td {
 }
 
 td a {
+  color: #3560A5;
+}
+
+.add-pokemon {
+  bottom: 0vw;
+  padding: 0px;
+}
+.add-btn {
+  font-size: 3.5vw;
+  height: 4.5vw;
+  width: 4.5vw;
+  border-radius: 100%;
   color: #962022;
+  padding-top: 1vw;
+  background-color: black;
+  font-family: pokemon GB;
+  border: 3px solid #962022;
+}
+
+.pokemon-footer {
+  font-family: pokemon GB;
+  font-size: 1vw;
 }
 
 .error {

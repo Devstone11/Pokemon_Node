@@ -2,7 +2,8 @@
 <!-- Everything below line 3 feel free to delete and or build on. This is just sample data -->
 <%- contentFor('body') %>
 
-<h2>POKEMON</h2>
+<div class="h2-bckgnd pokemon-home"></div>
+<h2 class="pokemon-home">POKEMON</h2>
 <div class="table-div-bckgnd"></div>
 <div class="table-div">
   <table>
@@ -47,6 +48,6 @@
   </table>
 </div>
 
-<form action="/pokemon/new" method="GET">
-    <input type="submit" value="+ Add New Pokemon">
+<form class="add-pokemon pokemon-home" action="/pokemon/new" method="GET">
+    <input class="add-btn" type="submit" value="+">
 </form>
