@@ -1,24 +1,14 @@
-<!-- DO NOT TOUCH LINE 3 ! This imports our HTML layout-->
-<!-- Everything below line 3 feel free to delete and or build on. This is just sample data -->
-<%- contentFor('body') %>
 
-<span style="color:white">Trainers home page.</span>
+<div class="display-bckgnd info"></div>
 
-<ul>
+<div class="show info">
+  <h1>Trainers</h1>
   <% for (var i = 0; i < trainers.length; i++) { %>
-    <li>
+    <h2>
       <a href="/trainers/<%= trainers[i].id %>"><%= trainers[i].name %></a>
-    </li>
+    </h2>
   <% } %>
-</ul>
+</div>
 
-<button type="button" name="button" id="add_new">+ Add New Trainer</button>
 
-<script type="text/javascript">
-   var btn = document.getElementById("add_new");
-   var passedInData = '<%= passedInData %>' ;
-   btn.addEventListener("click", function(){
-     alert("the button works, and we see "+passedInData);
-   })
-
-</script>
+<link rel='stylesheet' href='/stylesheets/trainers.css' />

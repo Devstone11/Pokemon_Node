@@ -1,10 +1,10 @@
 .pokemon-wear-section {
   position: relative;
-  background: url('/images/pokeball-bubbles.jpg');
+  background: url('/images/ball_background_opaque.png');
   background-repeat: no-repeat;
-  background-position: 0vw 40%;
+  background-position: -40vw 0%;
   background-size: cover;
-  width: 100%;
+  width: 170%;
 }
 
 .info {
@@ -22,7 +22,7 @@
   opacity: 0.65;
 }
 
-.show h1,h2,h3 {
+.show h1,h2 a {
   font-family: pokemon GB;
   color: #3560A5;
 }
@@ -34,8 +34,8 @@
 
 
 .show h2 {
-  font-size: 1.5vw;
-  margin-top: 2vw;
+  font-size: 2vw;
+  margin-top: 1vw;
 }
 
 #name {
