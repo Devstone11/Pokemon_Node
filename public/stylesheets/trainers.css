@@ -22,7 +22,14 @@
   opacity: 0.65;
 }
 
-.show h1,h2 a {
+h1,
+h2,
+h3 {
+  font-family: pokemon GB;
+  color: #3560A5;
+}
+
+a {
   font-family: pokemon GB;
   color: #3560A5;
 }
@@ -35,46 +42,18 @@
 
 .show h2 {
   font-size: 2vw;
-  margin-top: 1vw;
+  margin-top: 1.5vw;
 }
 
-#name {
-  margin-top: 0px;
-}
 .show h3 {
   font-size: 1.5vw;
-  text-align: right;
   margin-top: -1.5vw;
   height: 25px;
 }
 
-.show input {
-  height: 2vw;
-  text-align: right;
-  font-size: 2vw;
-  background-color: #959E9B;
-  border: none;
-  width: 15vw;
-  margin: -1.5vw 0 0 11vw;
-}
-
-.show select {
-  font-size: 2vw;
-  width: 15vw;
-  background-color: #959E9B;
-  text-align: right;
-  margin: -1.5vw 0 0 11vw;
-  border-radius: 0;
-}
-
-#submit {
-  background-color: #962022;
-  margin: 2.5vw;
-  height: 3vw;
-  text-align: center;
-  width: auto;
-  margin: 2.5vw 2.5vw 0;
-  border-radius: 5px;
-  font-family: pokemon GB;
-  font-size: 1.5vw;
+.table-div {
+  border: 1px black solid;
+  margin: 13vw 0 0 12vw;
+  height: 24vh;
+  overflow: scroll;
 }
