@@ -1,10 +1,11 @@
 <%- contentFor('body') %>
 
-<span style="color:white">Pokemón new page.</span>
-
-<form action="/pokemon/<%= pokemon.id %>" method="post">
-    Name: </label><input type="text" name="name" value="<%= pokemon.name %>">
-    Trainer: <select name="trainer_id">
+<div class="display-bckgnd info"></div>
+<form class = "show info" action="/pokemon/<%= pokemon.id %>" method="post">
+    <h2 id="name">Name:</h2>
+    <input type="text" name="name" value="<%= pokemon.name %>">
+    <h2>Trainer:</h2>
+    <select name="trainer_id">
       <% for (var i = 0; i < trainers.length; i++) {
          if (trainers[i].id === pokemon.trainer_id) { %>
           <option value="<%= trainers[i].id %>" selected><%= trainers[i].name %></option>
@@ -13,6 +14,9 @@
         <% }
        } %>
     </select>
-    CP: <input type="number" name="cp" value="<%= pokemon.cp %>">
-    <input type="submit" value="+ Submit Changes">
+    <h2>CP:</h2>
+    <input type="number" name="cp" value="<%= pokemon.cp %>">
+    <input id="submit" type="submit" value="Submit Changes">
 </form>
+
+<link rel='stylesheet' href='/stylesheets/new-edit.css' />
