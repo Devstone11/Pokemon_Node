@@ -62,14 +62,14 @@ router.post('/:id', function(req, res, next) {
 })
 
 router.get('/:id/assign-gym', function(req, res, next) {
-  Pokemon.setGym('t', req.params.id).then(function() {
+  Pokemon.setGym('t', 'id', req.params.id).then(function() {
     (req.cookies.p1) ? res.cookie('p2', req.params.id) : res.cookie('p1', req.params.id);
     res.redirect('/');
   })
 })
 
 router.get('/:id/remove-gym', function(req, res, next) {
-  Pokemon.setGym('f', req.params.id).then(function() {
+  Pokemon.setGym('f', 'id', req.params.id).then(function() {
     (req.cookies.p1 === req.params.id) ? res.clearCookie('p1') : res.clearCookie('p2');
     res.redirect('/');
   })

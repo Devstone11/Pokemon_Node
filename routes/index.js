@@ -35,15 +35,15 @@ router.get('/gym/edit', function(req, res, next) {
 router.post('/gym', function(req, res, next) {
   console.log(req.body);
   if (req.body.pokemon1) {
-    Pokemon.setGym('t', req.body.pokemon1).then(function() {
-      Pokemon.setGym('t', req.body.pokemon2).then(function() {
+    Pokemon.setGym('t', 'id', req.body.pokemon1).then(function() {
+      Pokemon.setGym('t', 'id', req.body.pokemon2).then(function() {
         res.cookie('p1', req.body.pokemon1);
         res.cookie('p2', req.body.pokemon2);
         res.redirect('/gym');
       });
     });
   } else {
-    Pokemon.setGym('t', req.body.pokemon2).then(function() {
+    Pokemon.setGym('t', 'id', req.body.pokemon2).then(function() {
       if (req.cookies.p1) {
         res.cookie('p2', req.body.pokemon2);
       } else {
@@ -52,6 +52,15 @@ router.post('/gym', function(req, res, next) {
       res.redirect('/gym')
     });
   }
+})
+
+router.post('/gym/reset', function(req, res, next) {
+  Pokemon.setGym('f', 'in_gym', true).then(function() {
+    res.clearCookie('p1');
+    res.clearCookie('p2');
+    res.redirect('/gym');
+  })
+
 })
 
 module.exports = router;
