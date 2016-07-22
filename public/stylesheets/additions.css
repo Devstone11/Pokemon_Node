@@ -1,10 +1,27 @@
 .table-div {
   height: 60vh;
   overflow: scroll;
+  position: absolute;
+  right: 4vw;
+  top: 12vh;
+  padding: 1vw 1vw none;
+}
+
+.table-div-bckgnd {
+  background-color: black;
+  opacity: 0.85;
+  height: 61vh;
+  width: 67vw;
+  position: absolute;
+  right: 3vw;
+  top: 12vh;
 }
 
 table {
-  color: black;
+  color: #962022;
+  font-family: pokemon GB;
+  font-size: 1.05vw;
+  border-collapse: collapse;
 }
 
 th {
@@ -12,14 +29,18 @@ th {
 }
 
 h2 {
-  color: #E9B756;
+  color: #962022;
   margin: 0px;
+  position: absolute;
+  right: 3vw;
+  top: 4vh;
+  font-family: pokemon GB;
+  font-size: 4vw;
 }
 
 td {
-  background-color: #E9B756;
-  border-bottom: 1px black solid;
   padding: 0.5vw;
+  text-align: center;
 }
 
 td a {

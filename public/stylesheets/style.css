@@ -78,6 +78,7 @@ a img{
 .pokemon-header {
   overflow: visible;
   background-color: black;
+  height: 10vh;
 }
 
   .pokemon-header .material-icons {
@@ -310,7 +311,7 @@ a img{
 
 .pokemon-wear-section {
   position: relative;
-  background: url('/images/ball_background_opaque.png') center top no-repeat;
+  background: url('/images/pokeball-box.jpg') center top no-repeat;
   background-size: cover;
   /*height: 800px;*/
   height: 75vh;
@@ -440,6 +441,7 @@ a img{
 .pokemon-footer {
   background-color: black;
   position: relative;
+  height: 3vh;
 }
 
   .pokemon-footer a:hover {
