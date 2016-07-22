@@ -60,7 +60,6 @@ router.post('/gym/reset', function(req, res, next) {
     res.clearCookie('p2');
     res.redirect('/gym');
   })
-
 })
 
 module.exports = router;

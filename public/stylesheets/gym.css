@@ -1,0 +1,114 @@
+.pokemon-wear-section {
+  position: relative;
+  background: url('/images/pokeball-flame.jpg');
+  background-repeat: no-repeat;
+  background-position: 0vw 40%;
+  background-size: cover;
+  width: 100%;
+}
+
+.info {
+  position: absolute;
+  height: 33vw;
+  min-height: 330px;
+  width: 28vw;
+  top: 3vw;
+  left: 5vw;
+  padding: 2vw;
+}
+
+.display-bckgnd {
+  background-color: black;
+  opacity: 0.65;
+}
+
+.show h1,h2,h3,button {
+  font-family: pokemon GB;
+  color: #3560A5;
+  font-size: 1.5vw;
+}
+
+.show h1 {
+  font-size: 3vw;
+  color: #962022;
+}
+
+.show h2 {
+  margin-top: 2vw;
+}
+
+.show h3 {
+  text-align: right;
+  margin-top: -1.5vw;
+  height: 25px;
+}
+
+.show input {
+  height: 2vw;
+  text-align: right;
+  font-size: 2vw;
+  background-color: #959E9B;
+  border: none;
+  width: 15vw;
+  margin: -1.5vw 0 0 11vw;
+}
+
+.show select {
+  font-size: 2vw;
+  width: 15vw;
+  background-color: #959E9B;
+  text-align: right;
+  margin: -1.5vw 0 0 11vw;
+  border-radius: 0;
+}
+
+#battle {
+  background-color: #FFCC00;
+  height: 5vw;
+  width: auto;
+  font-size: 2vw;
+  color: red;
+  padding: 1.5vw;
+  margin: 0 4vw 0;
+}
+
+#submit {
+  background-color: #962022;
+  margin: 2.5vw;
+  height: 2vw;
+  text-align: center;
+  width: auto;
+  margin: 2.5vw 8vw 0;
+  border-radius: 5px;
+  font-family: pokemon GB;
+  font-size: 1vw;
+}
+
+.win-box {
+  position: absolute;
+  height: 24vw;
+  min-height: 250px;
+  width: 38vw;
+  top: 3vw;
+  left: 40vw;
+  padding: 2vw;
+  text-align: center;
+}
+
+#win-box-bckgnd {
+  background-color: black;
+  opacity: 0.85;
+}
+
+#winner {
+  color: red;
+  font-size: 4vw;
+}
+
+.reward {
+  font-size: 4vw;
+}
+
+#error {
+  color: red;
+}

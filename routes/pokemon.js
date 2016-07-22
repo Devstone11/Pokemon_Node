@@ -73,6 +73,10 @@ router.get('/:id/remove-gym', function(req, res, next) {
     res.redirect('/');
   })
 })
+// 
+// router.get('/:id/win', function(req, res, next) {
+//   console.log(req.params.id);
+// })
 
 router.get('/:id/delete', function(req, res, next) {
   Pokemon.delete(req.params.id).then(function() {

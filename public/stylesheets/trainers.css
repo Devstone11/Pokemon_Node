@@ -2,9 +2,9 @@
   position: relative;
   background: url('/images/ball_background_opaque.png');
   background-repeat: no-repeat;
-  background-position: -40vw 0%;
+  background-position: -20vw 0%;
   background-size: cover;
-  width: 170%;
+  width: 140%;
 }
 
 .info {
@@ -52,7 +52,6 @@ a {
 }
 
 .table-div {
-  border: 1px black solid;
   margin: 13vw 0 0 12vw;
   height: 24vh;
   overflow: scroll;
