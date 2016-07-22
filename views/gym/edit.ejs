@@ -1,28 +1,30 @@
-<%- contentFor('body') %>
+<div class="display-bckgnd info"></div>
+<div class="show info">
+  <h1>Gym</h1>
+  <form action="/gym" method="post">
+    <h2>Pokemon 1:</h2>
+    <% if (pokemon1) { %>
+      <h3><%= pokemon1.name %></h3>
+    <% } else { %>
+      <select name="pokemon1">
+        <% for (var i = 0; i < pokemon.length; i++) { %>
+          <option value="<%= pokemon[i].id %>"><%= pokemon[i].name %></option>
+        <% } %>
+      </select>
+    <% } %>
 
-<span style="color:white">Gym home page.</span>
-
-<form action="/gym" method="post">
-  <h3>Pokemon 1:</h3>
-  <% if (pokemon1) { %>
-    <h2><%= pokemon1.name %></h2>
-  <% } else { %>
-    <select name="pokemon1">
+    <h2>Pokemon 2:</h2>
+    <select name="pokemon2">
       <% for (var i = 0; i < pokemon.length; i++) { %>
         <option value="<%= pokemon[i].id %>"><%= pokemon[i].name %></option>
       <% } %>
     </select>
-  <% } %>
+    <input id="add" type="submit" value="Add Pokemon to Gym">
+  </form>
 
-  <h3>Pokemon 2:</h3>
-  <select name="pokemon2">
-    <% for (var i = 0; i < pokemon.length; i++) { %>
-      <option value="<%= pokemon[i].id %>"><%= pokemon[i].name %></option>
-    <% } %>
-  </select>
-  <input type="submit" value="Add Pokemon to Gym">
-</form>
+  <form action="/gym/reset" method="post">
+    <input id="submit" type="submit" name="reset" value="Reset Gym">
+  </form>
+</div>
 
-<form action="/gym/reset" method="post">
-  <input type="submit" name="reset" value="Reset Gym">
-</form>
+<link rel='stylesheet' href='/stylesheets/gym.css' />

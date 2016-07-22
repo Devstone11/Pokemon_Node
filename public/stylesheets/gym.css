@@ -44,13 +44,7 @@
 }
 
 .show input {
-  height: 2vw;
-  text-align: right;
-  font-size: 2vw;
-  background-color: #959E9B;
   border: none;
-  width: 15vw;
-  margin: -1.5vw 0 0 11vw;
 }
 
 .show select {
@@ -60,6 +54,18 @@
   text-align: right;
   margin: -1.5vw 0 0 11vw;
   border-radius: 0;
+}
+
+#add {
+  background-color: #962022;
+  margin: 2.5vw;
+  height: 3vw;
+  text-align: center;
+  width: auto;
+  margin: 2.5vw 0vw 0;
+  border-radius: 5px;
+  font-family: pokemon GB;
+  font-size: 1.5vw;
 }
 
 #battle {
