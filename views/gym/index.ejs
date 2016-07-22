@@ -9,3 +9,15 @@
   <h2>Pokemon 2: <%= pokemon2.name %></h2>
   <button type="button" name="button" id="battle">Battle!</button>
 <% } %>
+  <h1 id="winner"></h1>
+
+  <script type="text/javascript">
+    console.log("Reading the script!");
+     var btn = document.getElementById("battle");
+     var winner = document.getElementById("winner");
+     btn.addEventListener("click", function(){
+       var winnerName = (<%= pokemon1.cp %> > <%= pokemon2.cp %>) ?
+       'Winner: <%= pokemon1.name %>' : 'Winner: <%= pokemon2.name %>';
+       winner.innerHTML =winnerName;
+     })
+  </script>
