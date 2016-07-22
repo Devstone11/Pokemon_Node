@@ -27,7 +27,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/new', function(req, res, next) {
-  res.render('pokemon/new');
+  Pokemon.all('trainers').then(function(trainers) {
+    res.render('pokemon/new', {trainers: trainers.rows})
+  })
 });
 
 router.post('/', function(req, res, next) {

@@ -1,10 +1,19 @@
 <%- contentFor('body') %>
 
-<span style="color:white">Pokemón new page.</span>
-
-<form action="/pokemon" method="post">
+<div class="display-bckgnd info"></div>
+<form class="show info" action="/pokemon" method="post">
+  <h2 id="name">Name:</h2>
     <input type="text" name="name" placeholder="Pokemon Name">
-    <input type="number" name="trainer_id" placeholder="Pokemon Trainer Id">
+    <h2>Trainer:</h2>
+    <!-- <input type="number" name="trainer_id" placeholder="Pokemon Trainer Id"> -->
+    <select name="trainer_id">
+      <% for (var i = 0; i < trainers.length; i++) { %>
+          <option value="<%= trainers[i].id %>"><%= trainers[i].name %></option>
+      <% } %>
+    </select>
+    <h2>CP:</h2>
     <input type="number" name="cp" placeholder="Combat Power">
-    <input type="submit" value="+ Add This Pokemon">
+    <input id="submit" type="submit" value="Submit Pokemon">
 </form>
+
+<link rel='stylesheet' href='/stylesheets/new-edit.css' />
