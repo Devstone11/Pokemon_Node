@@ -1,5 +1,29 @@
+.table-div {
+  height: 60vh;
+  overflow: scroll;
+}
+
 table {
-  background-color: white;
+  color: black;
+}
+
+th {
+  color: #E9B756;
+}
+
+h2 {
+  color: #E9B756;
+  margin: 0px;
+}
+
+td {
+  background-color: #E9B756;
+  border-bottom: 1px black solid;
+  padding: 0.5vw;
+}
+
+td a {
+  color: #962022;
 }
 
 .error {

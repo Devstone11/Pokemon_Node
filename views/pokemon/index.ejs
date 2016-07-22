@@ -2,48 +2,49 @@
 <!-- Everything below line 3 feel free to delete and or build on. This is just sample data -->
 <%- contentFor('body') %>
 
-<span style="color:white">Pokemón home page.</span>
-
-<table>
-  <thead>
-    <th>id</th>
-    <th>name</th>
-    <th>trainer_id</th>
-    <th>cp</th>
-    <th>in_gym</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </thead>
-  <tbody>
-    <% for (var i = 0; i < pokemon.length; i++) { %>
-      <tr>
-        <td><%= pokemon[i].id %></td>
-        <td>
-          <a href="/pokemon/<%= pokemon[i].id %>"><%= pokemon[i].name %></a>
-        </td>
-        <td><%= pokemon[i].trainer_id %></td>
-        <td><%= pokemon[i].cp %></td>
-        <td><%= pokemon[i].in_gym %></td>
-        <% if (pokemon[i].in_gym) { %>
-          <td><a href="/pokemon/<%= pokemon[i].id %>/remove-gym">Remove from gym</a></td>
-        <% } else {
-          if (!gymFull) { %>
-            <td><a href="/pokemon/<%= pokemon[i].id %>/assign-gym">Assign to gym</a></td>
-          <% } else {%>
-            <td></td>
-          <% }
-        } %>
-        <td>
-          <a href="/pokemon/<%= pokemon[i].id %>/edit">edit</a>
-        </td>
-        <td>
-          <a href="/pokemon/<%= pokemon[i].id %>/delete">delete</a>
-        </td>
-      </tr>
-    <% } %>
-  </tbody>
-</table>
+<h2>POKEMON</h2>
+<div class="table-div">
+  <table>
+    <thead>
+      <th>id</th>
+      <th>name</th>
+      <th>trainer_id</th>
+      <th>cp</th>
+      <th>in_gym</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </thead>
+    <tbody>
+      <% for (var i = 0; i < pokemon.length; i++) { %>
+        <tr>
+          <td><%= pokemon[i].id %></td>
+          <td>
+            <a href="/pokemon/<%= pokemon[i].id %>"><%= pokemon[i].name %></a>
+          </td>
+          <td><%= pokemon[i].trainer_id %></td>
+          <td><%= pokemon[i].cp %></td>
+          <td><%= pokemon[i].in_gym %></td>
+          <% if (pokemon[i].in_gym) { %>
+            <td><a href="/pokemon/<%= pokemon[i].id %>/remove-gym">Remove from gym</a></td>
+          <% } else {
+            if (!gymFull) { %>
+              <td><a href="/pokemon/<%= pokemon[i].id %>/assign-gym">Assign to gym</a></td>
+            <% } else {%>
+              <td></td>
+            <% }
+          } %>
+          <td>
+            <a href="/pokemon/<%= pokemon[i].id %>/edit">edit</a>
+          </td>
+          <td>
+            <a href="/pokemon/<%= pokemon[i].id %>/delete">delete</a>
+          </td>
+        </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
 
 <form action="/pokemon/new" method="GET">
     <input type="submit" value="+ Add New Pokemon">
