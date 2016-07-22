@@ -4,8 +4,28 @@ var Pokemon = require('../lib/queries');
 
 router.get('/', function(req, res, next) {
   Pokemon.all('pokemon').then(function(pokemon) {
-    var gymFull = (req.cookies.p1 && req.cookies.p2) ? true : false;
-    res.render('pokemon/index', {pokemon: pokemon.rows, gymFull: gymFull});
+
+    var inGym = pokemon.rows.filter(function(poke) {
+      return poke.in_gym === true;
+    })
+    console.log(inGym);
+    var gymFull = false;
+    if (inGym.length > 1) {
+      gymFull = true;
+      res.cookie('p1', inGym[0].id);
+      res.cookie('p2', inGym[1].id);
+      res.render('pokemon/index', {pokemon: pokemon.rows, gymFull: true});
+    } else if (inGym.length === 1) {
+      res.cookie('p1', inGym[0].id);
+      res.clearCookie('p2');
+      res.render('pokemon/index', {pokemon: pokemon.rows, gymFull: false});
+    } else {
+      res.clearCookie('p1');
+      res.clearCookie('p2');
+      res.render('pokemon/index', {pokemon: pokemon.rows, gymFull: false});
+    }
+    // console.log(gymFull);
+    // res.render('pokemon/index', {pokemon: pokemon.rows, gymFull: gymFull});
   })
 });
 
