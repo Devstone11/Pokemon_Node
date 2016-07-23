@@ -3,31 +3,28 @@
   <% if (pokemon1.id === pokemon2.id) { %>
     <h1 id="error">A Pokémon cannot fight itself! Please choose a different Pokémon!</h1>
   <% } else { %>
+    <h1>Gym</h1>
     <h2>Pokemon 1:</h2>
     <h3><%= pokemon1.name %></h3>
     <h2>Pokemon 2:</h2>
     <h3><%= pokemon2.name %></h3>
-    <button type="button" name="button" id="battle">Battle!</button>
+    <% if (!winner) { %>
+      <form action="/pokemon/<%= stronger %>/win" method="post">
+        <input id="battle" type="submit" name="name" value="Battle!">
+      </form>
+    <% } else { %>
+      <div class="win-box" id="win-box-bckgnd"></div>
+      <div class="win-box" id="winner">
+        <h1>Winner: <%= winner.name %></h1>
+        <h2 class="reward"> +20 CP</h2>
+      </div>
+    <% } %>
   <% } %>
-
   <form action="/gym/reset" method="post">
     <input id="submit" type="submit" name="reset" value="Reset Gym">
   </form>
-  <div id="win-box-bckgnd"></div>
-  <h1 id="winner"></h1>
 </div>
 
-<script type="text/javascript">
-   var btl = document.getElementById("battle");
-   var winner = document.getElementById("winner");
-   var winnerBckgnd = document.getElementById("win-box-bckgnd");
-   btl.addEventListener("click", function(){
-     var winnerName = (<%= pokemon1.cp %> > <%= pokemon2.cp %>) ?
-     'Winner: <%= pokemon1.name %>' : 'Winner: <%= pokemon2.name %>';
-     winner.innerHTML =winnerName + '<h2 class="reward">+20 CP</h2>';
-     winner.className += 'win-box';
-     winnerBckgnd.className += 'win-box';
-   })
-</script>
+
 
 <link rel='stylesheet' href='/stylesheets/gym.css' />

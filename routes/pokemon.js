@@ -49,7 +49,7 @@ router.get('/:id', function(req, res, next) {
 router.get('/:id/edit', function(req, res, next) {
   Pokemon.find('pokemon', req.params.id).then(function(pokemon) {
     Pokemon.all('trainers').then(function(trainers) {
-      res.render('pokemon/edit', {pokemon: pokemon.rows[0], trainers: trainers.rows})
+      res.render('pokemon/edit', {pokemon: pokemon.rows[0], trainers: trainers.rows});
     })
   })
 })
@@ -73,10 +73,18 @@ router.get('/:id/remove-gym', function(req, res, next) {
     res.redirect('/');
   })
 })
-// 
-// router.get('/:id/win', function(req, res, next) {
-//   console.log(req.params.id);
-// })
+
+router.post('/:id/win', function(req, res, next) {
+  Pokemon.find('pokemon', req.params.id).then(function(winner) {
+    Pokemon.addCp(req.params.id, winner.rows[0].cp).then(function() {
+      Pokemon.find('pokemon', req.cookies.p1).then(function(pokemon1) {
+        Pokemon.find('pokemon', req.cookies.p2).then(function(pokemon2) {
+          res.render('gym/index', {pokemon1: pokemon1.rows[0], pokemon2: pokemon2.rows[0], winner: winner.rows[0]});
+        })
+      })
+    })
+  })
+})
 
 router.get('/:id/delete', function(req, res, next) {
   Pokemon.delete(req.params.id).then(function() {

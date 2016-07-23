@@ -11,7 +11,8 @@ router.get('/gym', function(req, res, next) {
   if (req.cookies.p1 && req.cookies.p2) {
     Pokemon.find('pokemon', req.cookies.p1).then(function(pokemon1) {
       Pokemon.find('pokemon', req.cookies.p2).then(function(pokemon2) {
-        res.render('gym/index', {pokemon1: pokemon1.rows[0], pokemon2: pokemon2.rows[0]});
+        var stronger = (pokemon1.rows[0].cp > pokemon2.rows[0].cp) ? pokemon1.rows[0].id : pokemon2.rows[0].id;
+        res.render('gym/index', {pokemon1: pokemon1.rows[0], pokemon2: pokemon2.rows[0], stronger: stronger, winner: false});
       })
     })
   } else {
